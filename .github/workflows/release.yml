@@ -245,3 +245,5 @@ jobs:
           file: ./Xray-${{ env.ASSET_NAME }}.zip*
           tag: ${{ github.ref }}
           file_glob: true
+          overwrite: true
+          body: "Xray-Core Modified For Custom Websocket Depedencies"
