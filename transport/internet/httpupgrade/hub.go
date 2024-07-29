@@ -36,7 +36,7 @@ func (s *server) Handle(conn net.Conn) (stat.Connection, error) {
 	if err != nil {
 		return nil, err
 	}
-
+/*
 	if s.config != nil {
 		host := req.Host
 		if len(s.config.Host) > 0 && !internet.IsValidHTTPHost(host, s.config.Host) {
@@ -47,7 +47,7 @@ func (s *server) Handle(conn net.Conn) (stat.Connection, error) {
 			return nil, errors.New("bad path: ", req.URL.Path)
 		}
 	}
-
+*/
 	connection := strings.ToLower(req.Header.Get("Connection"))
 	upgrade := strings.ToLower(req.Header.Get("Upgrade"))
 	if connection != "upgrade" || upgrade != "websocket" {

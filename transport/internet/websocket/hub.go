@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gorilla/websocket"
+	"github.com/dharak36/websocket"
 	"github.com/xtls/xray-core/common"
 	"github.com/xtls/xray-core/common/errors"
 	"github.com/xtls/xray-core/common/net"
@@ -38,6 +38,7 @@ var upgrader = &websocket.Upgrader{
 }
 
 func (h *requestHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+/*
 	if len(h.host) > 0 && !internet.IsValidHTTPHost(request.Host, h.host) {
 		errors.LogInfo(context.Background(), "failed to validate host, request:", request.Host, ", config:", h.host)
 		writer.WriteHeader(http.StatusNotFound)
@@ -48,7 +49,7 @@ func (h *requestHandler) ServeHTTP(writer http.ResponseWriter, request *http.Req
 		writer.WriteHeader(http.StatusNotFound)
 		return
 	}
-
+*/
 	var extraReader io.Reader
 	responseHeader := http.Header{}
 	if str := request.Header.Get("Sec-WebSocket-Protocol"); str != "" {
